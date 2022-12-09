@@ -1,0 +1,157 @@
+* {
+  box-sizing: border-box;
+  font-family: 'Press Start 2P';
+}
+
+html {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #72B5B7;
+}
+
+body {
+  margin: 0 auto;
+  width: 75rem;
+  height: 64rem;
+  border: .5rem solid #f1fcfc;
+  border-radius: 2rem ;
+  background-color: #f1fcfc;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 0 1.5rem #f1fcfc;
+}
+
+#titleSection, #scoreSection {
+  width: 100%;
+  height: 20%;
+  background-color: #40e0d081;
+}
+
+#titleSection {
+  border-radius: 2rem 2rem 0% 0%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.title {
+  font-family: 'Press Start 2P';
+  letter-spacing: 1.5rem;
+  font-size: 3rem;
+}
+#scoreSection {
+  border-radius: 0 0 2rem 2rem ;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.scoreText {
+  font-family: 'Press Start 2P';
+  letter-spacing: 1rem;
+}
+
+.score {
+  font-size: 4rem;
+}
+
+main {
+  width: 100%;
+  height: 60%;
+  display: flex;
+}
+
+.left, .right {
+  width: 20%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mid {
+  width: 60%;
+  height: 100%;
+  background-color: #f1fcfc;
+}
+
+.mid.Bottom {
+  width: 60%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.left.Bottom, .right.Bottom {
+  width: 20%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mid.Main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: .5rem solid #633A82;
+  box-shadow: inset 0 0 10px black;
+}
+
+#tttHolder {
+  width: 29.8125rem;
+  height: 29.8125rem;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.box {
+  width: 159px;
+  height: 159px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.box:hover {
+  cursor: pointer;
+  background-color: #53ecf1;
+}
+
+.box:active {
+  cursor: pointer;
+  background-color: #d75ffc;
+}
+
+.score.Player {
+  color: #06f3fc;
+}
+
+.score.Computer {
+  color: #d75ffc
+}
+
+
+.box.Three,
+.box.Four,
+.box.Five {
+  border-top: .5rem solid black;
+}
+
+.box.Three,
+.box.Four,
+.box.Five {
+  border-bottom: .5rem solid black;
+}
+
+.box.One,
+.box.Four,
+.box.Seven {
+  border-left: .5rem solid black;
+  border-right: .5rem solid black;
+}
