@@ -1,3 +1,7 @@
+:root {
+  --glowtext-shadow: 0 0 5px rgba(0, 247, 255, 0.616), 0 0 10px rgb(0, 247, 255, 0.616), 0 0 15px rgb(0, 247, 255, 0.616);
+}
+
 * {
   box-sizing: border-box;
   font-family: 'Press Start 2P';
@@ -108,6 +112,9 @@ main {
   height: 29.8125rem;
   display: flex;
   flex-wrap: wrap;
+  font-size: 4rem;
+  
+  
 }
 
 .box {
@@ -116,6 +123,7 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
+  
 }
 
 .box:hover {
@@ -129,7 +137,7 @@ main {
 }
 
 .score.Player {
-  color: #06f3fc;
+  color: #0460eb;
 }
 
 .score.Computer {
@@ -140,18 +148,18 @@ main {
 .box.Three,
 .box.Four,
 .box.Five {
-  border-top: .5rem solid black;
+  border-top: .3rem solid black;
 }
 
 .box.Three,
 .box.Four,
 .box.Five {
-  border-bottom: .5rem solid black;
+  border-bottom: .3rem solid black;
 }
 
 .box.One,
 .box.Four,
 .box.Seven {
-  border-left: .5rem solid black;
-  border-right: .5rem solid black;
+  border-left: .3rem solid black;
+  border-right: .3rem solid black;
 }
