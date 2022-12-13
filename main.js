@@ -6,6 +6,7 @@ class TicTacToe {
     this.currentPlayer = currentPlayer
     this.boxArray = Array(9).fill(null)
     this.winningCombos = [
+      
       [0,1,2],
       [3,4,5],
       [6,7,8],
@@ -40,6 +41,7 @@ class TicTacToe {
   }
   getWinner() {
   //background-color: --glowtext-shadow
+
   }
   restart() {
   }
