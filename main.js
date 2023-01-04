@@ -43,7 +43,12 @@ class TicTacToe {
   //background-color: --glowtext-shadow
 
   }
+  gameOver() {
+  //if this.boxArray has element in each, then absolute justify GameOver window w/ restart
+  }
   restart() {
+    this.setGame()
+    this.boxArray = Array(9).fill(null)
   }
 }
 
