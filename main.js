@@ -73,5 +73,11 @@ function placeSymbol(e) {
   }
 }
 
+document.querySelector('button').addEventListener('click', reset)
+
+function reset() {
+  game.restart()
+}
+
 startGame()
 
