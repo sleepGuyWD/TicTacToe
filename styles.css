@@ -89,6 +89,14 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+}
+
+button {
+  width: 40%;
+  height: 15%;
+  border-radius: 1rem;
+  letter-spacing: .2rem;
 }
 
 .left.Bottom, .right.Bottom {
