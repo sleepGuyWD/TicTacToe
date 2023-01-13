@@ -48,7 +48,7 @@ class TicTacToe {
   }
   restart() {
     this.setGame()
-    this.boxArray = Array(9).fill(null)
+    this.gameBoxes.forEach(el => el = "")
   }
 }
 
