@@ -18,8 +18,8 @@ html {
 
 body {
   margin: 0 auto;
-  width: 75rem;
-  height: 64rem;
+  width: 65rem;
+  height: 55rem;
   border: .5rem solid #f1fcfc;
   border-radius: 2rem ;
   background-color: #f1fcfc;
@@ -45,7 +45,7 @@ body {
 .title {
   font-family: 'Press Start 2P';
   letter-spacing: 1.5rem;
-  font-size: 3rem;
+  font-size: 2.5rem;
 }
 #scoreSection {
   border-radius: 0 0 2rem 2rem ;
