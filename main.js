@@ -49,7 +49,7 @@ class TicTacToe {
   }
   restart() {
     this.setGame()
-    this.boxArray = Array(9).fill(null)
+    this.gameBoxes.forEach(el => el = "")
   }
 }
 
@@ -74,10 +74,19 @@ function placeSymbol(e) {
   }
 }
 
+<<<<<<< HEAD
 document.querySelector('button').addEventListener('click', restart())
 
 function restart() {
   game.restart()
 }
+=======
+document.querySelector('#reset').addEventListener('click', reset)
+
+function reset() {
+  game.restart()
+}
+
+>>>>>>> b1e8b519e841d1bca389169e229434d25ac9a15b
 startGame()
 
