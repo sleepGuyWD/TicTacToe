@@ -21,6 +21,7 @@ class TicTacToe {
   setGame() {
     this.playerScore.innerText = 0
     this.cpuScore.innerText = 0
+    
   }
   changePlayer() {
     if (this.currentPlayer == 'X') {
@@ -73,5 +74,10 @@ function placeSymbol(e) {
   }
 }
 
+document.querySelector('button').addEventListener('click', restart())
+
+function restart() {
+  game.restart()
+}
 startGame()
 
