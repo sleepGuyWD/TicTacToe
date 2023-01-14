@@ -1,5 +1,5 @@
 :root {
-  --glowtext-shadow: 0 0 5px rgba(0, 247, 255, 0.616), 0 0 10px rgb(0, 247, 255, 0.616), 0 0 15px rgb(0, 247, 255, 0.616);
+  --glowtext-shadow: 0 0 20px rgba(0, 247, 255, 0.616), 0 0 10px rgb(0, 247, 255, 0.616), 0 0 15px rgb(0, 247, 255, 0.616);
 }
 
 * {
@@ -46,6 +46,7 @@ body {
   font-family: 'Press Start 2P';
   letter-spacing: 1.5rem;
   font-size: 2.5rem;
+  
 }
 #scoreSection {
   border-radius: 0 0 2rem 2rem ;
@@ -57,6 +58,12 @@ body {
 .scoreText {
   font-family: 'Press Start 2P';
   letter-spacing: 1rem;
+}
+
+#playerText {
+  font-size: 2rem;
+  margin: 0;
+  margin-bottom: 2rem;
 }
 
 .score {
@@ -145,11 +152,11 @@ button {
 }
 
 .score.Player {
-  color: #0460eb;
+  color: #d75ffc;
 }
 
 .score.Computer {
-  color: #d75ffc
+  color: #0460eb
 }
 
 
@@ -171,3 +178,4 @@ button {
   border-left: .3rem solid black;
   border-right: .3rem solid black;
 }
+

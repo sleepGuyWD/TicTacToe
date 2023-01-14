@@ -1,12 +1,12 @@
 class TicTacToe {
-  constructor(gameBoxes, playerScore, cpuScore, currentPlayer) {
+  constructor(gameBoxes, playerScore, cpuScore, currentPlayer, playerText) {
     this.gameBoxes = gameBoxes
     this.playerScore = playerScore
     this.cpuScore = cpuScore
     this.currentPlayer = currentPlayer
+    this.playerText = playerText
     this.boxArray = Array(9).fill(null)
     this.winningCombos = [
-      
       [0,1,2],
       [3,4,5],
       [6,7,8],
@@ -14,14 +14,19 @@ class TicTacToe {
       [1,4,7],
       [2,5,8],
       [0,4,8],
-      [2,4,8]
+      [2,4,6]
   ]
     this.setGame()
   }
   setGame() {
-    this.playerScore.innerText = 0
-    this.cpuScore.innerText = 0
-    
+    this.playerScore.innerText = 'X'
+    this.cpuScore.innerText = 'O'
+    this.currentPlayer = 'X'
+    this.boxArray = Array(9).fill(null)
+    this.playerText.innerText = ''
+    this.gameBoxes.forEach(box => {
+      box.style.boxShadow = ''
+    })
   }
   changePlayer() {
     if (this.currentPlayer == 'X') {
@@ -41,15 +46,25 @@ class TicTacToe {
     }
   }
   getWinner() {
-  //background-color: --glowtext-shadow
-
+    for (const condition of this.winningCombos) {
+      let [a, b, c] = condition
+      if (this.boxArray[a] && (this.boxArray[a] == this.boxArray[b] && this.boxArray[a] == this.boxArray[c])) {
+        return [a, b, c]
+      }
+    }
+    return false
   }
   gameOver() {
   //if this.boxArray has element in each, then absolute justify GameOver window w/ restart
   }
   restart() {
     this.setGame()
-    this.gameBoxes.forEach(el => el = "")
+    this.gameBoxes.forEach(el => {
+      el.innerText = ""
+    })
+    this.boxArray.forEach(el => {
+      el = ""
+    })
   }
 }
 
@@ -57,9 +72,10 @@ let gameBoxes = Array.from(document.getElementsByClassName('box'))
 let playerScore = document.querySelector('.score.Player')
 let cpuScore = document.querySelector('.score.Computer')
 let currentPlayer = 'X'
+let playerText = document.querySelector('#playerText')
+let winnerIndicator = getComputedStyle(document.body).getPropertyValue('--glowtext-shadow')
 
-let game = new TicTacToe (gameBoxes, playerScore, cpuScore, currentPlayer)
-
+let game = new TicTacToe (gameBoxes, playerScore, cpuScore, currentPlayer, playerText)
 
 let startGame = () => {
   gameBoxes.forEach (box => box.addEventListener('click', placeSymbol))
@@ -70,23 +86,25 @@ function placeSymbol(e) {
     if (!game.boxArray[id]){
     game.boxArray[id] = game.currentPlayer
     e.target.innerText = game.currentPlayer
+
+    if (game.getWinner() !== false) {
+      playerText.innerText = `Player ${game.currentPlayer} has won!`
+      let winningBlocks = game.getWinner()
+      
+      winningBlocks.map(box => game.gameBoxes[box].style.boxShadow=winnerIndicator)
+      game.currentPlayer = ''
+      return
+    }
+
     game.changePlayer()
   }
 }
 
-<<<<<<< HEAD
-document.querySelector('button').addEventListener('click', restart())
-
-function restart() {
-  game.restart()
-}
-=======
 document.querySelector('#reset').addEventListener('click', reset)
 
 function reset() {
   game.restart()
 }
 
->>>>>>> b1e8b519e841d1bca389169e229434d25ac9a15b
 startGame()
 
