@@ -45,6 +45,15 @@ class TicTacToe {
       }
     }
   }
+  restart() {
+    this.setGame()
+    this.gameBoxes.forEach(el => {
+      el.innerText = ""
+    })
+    this.boxArray.forEach(el => {
+      el = ""
+    })
+  }
   getWinner() {
     for (const condition of this.winningCombos) {
       let [a, b, c] = condition
@@ -55,17 +64,8 @@ class TicTacToe {
     return false
   }
   gameOver() {
-  //if this.boxArray has element in each, then absolute justify GameOver window w/ restart
-  }
-  restart() {
-    this.setGame()
-    this.gameBoxes.forEach(el => {
-      el.innerText = ""
-    })
-    this.boxArray.forEach(el => {
-      el = ""
-    })
-  }
+    //if this.boxArray has element in each, then absolute justify GameOver window w/ restart
+    }
 }
 
 let gameBoxes = Array.from(document.getElementsByClassName('box'))
@@ -87,6 +87,8 @@ function placeSymbol(e) {
     game.boxArray[id] = game.currentPlayer
     e.target.innerText = game.currentPlayer
 
+    game.changePlayer()
+
     if (game.getWinner() !== false) {
       playerText.innerText = `Player ${game.currentPlayer} has won!`
       let winningBlocks = game.getWinner()
@@ -95,8 +97,6 @@ function placeSymbol(e) {
       game.currentPlayer = ''
       return
     }
-
-    game.changePlayer()
   }
 }
 
