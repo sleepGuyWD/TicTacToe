@@ -179,3 +179,102 @@ button {
   border-right: .3rem solid black;
 }
 
+@media screen and (max-width: 850px) {
+  main {
+    display: flex;
+    flex-direction: column;
+  }
+  body {
+    width: 100%;
+    height: 85%; 
+    margin: 2rem;
+    display: flex;
+    flex-direction: column;
+  }
+  .left, .right {
+    width: 100%;
+    height: 15%;
+  }
+
+  .mid {
+    width: 100%;
+    height: 100%;
+  }
+
+  #titleSection, #scoreSection {
+    width: 100%;
+    height: 20%;
+  }
+}
+
+
+@media screen and (max-width: 800px) {
+  .title {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+  .mid.Main {
+    font-size: 1.5rem;
+  }
+}
+
+
+
+@media screen and (max-width: 600px) {
+  .title {
+    font-size: 1rem;
+    text-align: center;
+    width: 100%;
+    letter-spacing: normal;
+  }
+  #tttHolder {
+    width: 19.375rem;
+    height: 19.375rem;
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 2rem;
+    
+    
+  }
+  .box {
+    width: 6.4583rem;
+    height: 6.4583rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+  }
+  .box.Three,
+  .box.Four,
+  .box.Five {
+    border-top: .3rem solid black;
+  }
+
+  .box.Three,
+  .box.Four,
+  .box.Five {
+    border-bottom: .3rem solid black;
+  }
+
+  .box.One,
+  .box.Four,
+  .box.Seven {
+    border-left: .3rem solid black;
+    border-right: .3rem solid black;
+  }
+  #playerText {
+    font-size: .6rem;
+    margin: 0;
+    margin-bottom: 2rem;
+  }
+  button {
+    width: 65%;
+    height: 20%;
+    border-radius: 1rem;
+    letter-spacing: .2rem;
+    text-align: center;
+  }
+  .score {
+    font-size: 2rem;
+  }
+}

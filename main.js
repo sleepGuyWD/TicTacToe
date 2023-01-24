@@ -6,7 +6,8 @@ class TicTacToe {
     this.currentPlayer = currentPlayer
     this.playerText = playerText
     this.boxArray = Array(9).fill(null)
-    this.winningCombos = [
+    this.winningCombos = 
+    [
       [0,1,2],
       [3,4,5],
       [6,7,8],
@@ -15,7 +16,7 @@ class TicTacToe {
       [2,5,8],
       [0,4,8],
       [2,4,6]
-  ]
+    ]
     this.setGame()
   }
   setGame() {
@@ -90,13 +91,17 @@ function placeSymbol(e) {
     game.changePlayer()
 
     if (game.getWinner() !== false) {
+      game.changePlayer()
       playerText.innerText = `Player ${game.currentPlayer} has won!`
       let winningBlocks = game.getWinner()
       
       winningBlocks.map(box => game.gameBoxes[box].style.boxShadow=winnerIndicator)
+      
       game.currentPlayer = ''
       return
     }
+    
+    console.log(game.currentPlayer)
   }
 }
 
